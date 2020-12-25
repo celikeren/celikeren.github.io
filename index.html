@@ -52,7 +52,7 @@
 								<br/><br/>
 								<h3><i class="fas fa-user-astronaut"></i>&nbsp;&nbsp;Java Developer</h3>
 								<h4><i class="fas fa-space-shuttle"></i>&nbsp;&nbsp;Spring Boot</h4>
-								<p><strong><i class="fas fa-hourglass-half"></i>&nbsp;&nbsp;1 year and 4 months</strong></p>
+								<p style="font-weight: bold">&nbsp;&nbsp;1 year and 4 months</p>
 								<p>Development and maintenance of sales services
 								<br/>Message Queueing & Caching & Cloud Config Server</p>
 							</section>
@@ -64,7 +64,38 @@
 								<br/>
 								<h3><i class="fas fa-user-astronaut"></i>&nbsp;&nbsp;Java Developer</h3>
 								<h4><i class="fas fa-space-shuttle"></i>&nbsp;&nbsp;Spring MVC</h4>
-								<p><strong><i class="fas fa-hourglass-half"></i>&nbsp;&nbsp;2 months and counting</strong></p>
+								<p id="duration">
+
+								<script>
+									var today = new Date();
+									var start = new Date(2020, 10, 1);
+									var diff = today-start;
+									var months = Math.ceil(diff/(60*60*24*1000*30));
+									var years;
+									if(months>12) {
+										years = Math.floor(months/12);
+										months -= years*12;
+									}
+									
+									var duration='  ';
+									if(years) {
+										if(years===1) {
+											duration = years + ' year and ';
+										} else {
+											duration = years + ' years and ';
+										}
+									}
+
+									if(months===1) {
+										duration += months + ' month and counting';
+									} else {
+										duration += months + ' months and counting';
+									}
+									document.getElementById("duration").innerHTML = duration;
+									document.getElementById("duration").style.fontWeight = "bold";
+									</script>
+								
+								
 								<p>Providing software consultancy to Turkcell <br/> (Turkey’s leading mobile operator)</p>
 							</section>
 						</div>
